@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduGenie | Learning workspace</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">EDU<span>GENIE</span></a><div class="status"><i></i>{{ 'Gemini connected' if live_ai else 'Demo mode' }}</div></header>
+  <main class="shell">
+    <section class="hero"><p class="eyebrow">PERSONAL STUDY STUDIO</p><h1>Turn confusion into a next step.</h1><p class="lead">Ask, understand, practice, and build a path forward with one focused learning companion.</p></section>
+    <section class="workspace">
+      <nav class="tabs" aria-label="Learning tools">
+        <button class="tab active" data-tool="qa">Ask</button><button class="tab" data-tool="explain">Explain</button><button class="tab" data-tool="summarize">Summarize</button><button class="tab" data-tool="quiz">Quiz</button><button class="tab" data-tool="learn">Learning path</button>
+      </nav>
+      <div class="tool-panel">
+        <div class="tool-copy"><p class="eyebrow" id="tool-kicker">CLARITY ON DEMAND</p><h2 id="tool-title">Ask a question</h2><p id="tool-description">Get a direct, learner-friendly answer to something you are studying.</p></div>
+        <form id="tool-form"><label id="input-label" for="prompt-input">Your question</label><textarea id="prompt-input" rows="5" required placeholder="Why is the sky blue?"></textarea><div class="form-footer"><span id="char-count">0 / 12000</span><button type="submit" id="submit-button">Get answer <span>-></span></button></div></form>
+        <div id="result" class="result" hidden><div class="result-label">RESPONSE</div><div id="result-body"></div></div>
+      </div>
+    </section>
+    <section class="principles"><div><strong>01</strong><h3>Simple first</h3><p>Explanations are shaped for understanding, not for showing off.</p></div><div><strong>02</strong><h3>Practice matters</h3><p>Turn a topic into questions that reveal what you know.</p></div><div><strong>03</strong><h3>Keep moving</h3><p>Get a sequence of next steps when the path feels unclear.</p></div></section>
+  </main>
+  <footer>EduGenie <span>Learning support, responsibly assisted by AI.</span></footer>
+  <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
